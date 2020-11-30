@@ -1,16 +1,16 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'cPanel Action'
+description: 'This is a test action for cPanel'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  test-input:  # id of input
+    description: 'test input'
     required: true
-    default: 'World'
+    default: 'This is a test'
 outputs:
   time: # id of output
-    description: 'The time we greeted you'
+    description: 'The time app deployed'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.test-input }}
