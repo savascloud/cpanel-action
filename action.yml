@@ -1,16 +1,16 @@
 # action.yml
-name: 'Cpanel Action'
-description: 'This is a test action for deploying apps from github to cPanel.'
+name: 'Hello World'
+description: 'Greet someone and record the time'
 inputs:
-  test-input:
-    description: 'For test'
+  who-to-greet:  # id of input
+    description: 'Who to greet'
     required: true
-    default: 'This is a test'
+    default: 'World'
 outputs:
-  time:
-    description: 'The time app deployed.'
+  time: # id of output
+    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.test-input }}
+    - ${{ inputs.who-to-greet }}
