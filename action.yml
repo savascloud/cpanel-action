@@ -1,0 +1,16 @@
+# action.yml
+name: 'Cpanel Action'
+description: 'This is a test action for deploying apps from github to cPanel.'
+inputs:
+  test-input:
+    description: 'For test'
+    required: true
+    default: 'This is a test'
+outputs:
+  time:
+    description: 'The time app deployed.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.test-input }}
