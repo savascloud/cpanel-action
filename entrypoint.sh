@@ -1,6 +1,9 @@
 #!/bin/sh -l
 
-echo "Input: $1"
-time=$(date)
-echo "::set-output name=time::$time"
-php -f /index.php $1 value2
+echo "username: $1"
+echo "token: $2"
+echo "hostname: $3"
+#time=$(date)
+#echo "::set-output name=time::$time"
+#php -f /index.php $1 $2 $3
+curl -H'Authorization: cpanel $1:$2' 'https://$3:2083/execute/VersionControl/retrieve?fields=name,type,branch,last_update'

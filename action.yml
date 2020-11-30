@@ -2,15 +2,25 @@
 name: 'cPanel Action'
 description: 'This is a test action for cPanel'
 inputs:
-  test-input:  # id of input
-    description: 'test input'
+  cpanel-username:  # id of input
+    description: 'username'
     required: true
-    default: 'This is a test'
-outputs:
-  time: # id of output
-    description: 'The time app deployed'
+    default: 'username'
+  cpanel-token:  # id of input
+    description: 'token'
+    required: true
+    default: 'token'
+  cpanel-hostname:  # id of input
+    description: 'hostname'
+    required: true
+    default: 'hostname'
+#outputs:
+#  time: # id of output
+#    description: 'The time app deployed'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.test-input }}
+    - ${{ inputs.cpanel-username }}
+    - ${{ inputs.cpanel-token }}
+    - ${{ inputs.cpanel-hostname }}

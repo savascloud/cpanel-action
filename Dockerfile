@@ -7,5 +7,3 @@ COPY index.php /index.php
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
-
-CMD [ "php", "/index.php" ]
